@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campaign Form</title>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(7, auto);
+    }
+
+    .grid-item {
+        background-color: var(--shadow);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .title {
+        margin: 0;
+        padding: 5px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    .button-container button {
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="grid-item">
+        <div class="title">
+            <h5><span>Campaign Title</span></h5>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="title">
+            <h5><span>Description</span></h5>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="title">
+            <h5><span>Start Date</span></h5>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="title">
+            <h5><span>End Date</span></h5>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="title">
+            <h5><span>Venue</span></h5>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="title">
+            <h5><span>Target Audience</span></h5>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="title">
+            <h5><span>Actions</span></h5>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <input type="text" placeholder="Campaign Title" name="CampaignTitle">
+    <div class=""></div>
+    <input type="text" placeholder="Description" name="Description">
+    <div class=""></div>
+    <input type="date" placeholder="Start Date" name="StartDate">
+    <div class=""></div>
+    <input type="date" placeholder="End Date" name="EndDate">
+    <div class=""></div>
+    <input type="text" placeholder="Venue" name="Venue">
+    <div class=""></div>
+    <input type="text" placeholder="Target Audience" name="Audience">
+    <div class=""></div>
+    <input type="text" placeholder="Action" name="Action">
+    <div class=""></div>
+</div>
+
+<div class="button-container">
+    <button id="buttonAdd">Add Entry</button>
+    <button id="buttonGet">Complete</button>
+</div>
+
+<div id="table-container"></div>
+
+<script>
+document.getElementById("buttonAdd").addEventListener("click", function() {
+    var container = document.querySelectorAll('.container')[1]; // Selecting the second container
+    var clone = container.cloneNode(true);
+    document.getElementById("table-container").appendChild(clone);
+});
+
+document.getElementById("buttonGet").addEventListener("click", function() {
+    var entries = document.querySelectorAll('.container:nth-child(n+2)'); // Selecting all containers from the second one
+    var tableContent = "<table>";
+    entries.forEach(function(entry) {
+        var campaignTitle = entry.querySelector('input[name="CampaignTitle"]').value;
+        var description = entry.querySelector('input[name="Description"]').value;
+        var startDate = entry.querySelector('input[name="StartDate"]').value;
+        var endDate = entry.querySelector('input[name="EndDate"]').value;
+        var venue = entry.querySelector('input[name="Venue"]').value;
+        var audience = entry.querySelector('input[name="Audience"]').value;
+        var action = entry.querySelector('input[name="Action"]').value;
+
+        tableContent += "<tr><th>Campaign Title</th><td>" + campaignTitle + "</td></tr>";
+        tableContent += "<tr><th>Description</th><td>" + description + "</td></tr>";
+        tableContent += "<tr><th>Start Date</th><td>" + startDate + "</td></tr>";
+        tableContent += "<tr><th>End Date</th><td>" + endDate + "</td></tr>";
+        tableContent += "<tr><th>Venue</th><td>" + venue + "</td></tr>";
+        tableContent += "<tr><th>Target Audience</th><td>" + audience + "</td></tr>";
+        tableContent += "<tr><th>Actions</th><td>" + action + "</td></tr>";
+    });
+    tableContent += "</table>";
+    document.getElementById("table-container").innerHTML = tableContent;
+});
+</script>
+
+</body>
+</html>

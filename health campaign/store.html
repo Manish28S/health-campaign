@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifecare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <!-- local -->
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .pre_loader {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: var(--black);
+        }
+        
+        .loading {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 100px;
+            width: 100px;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pre_loader">
+        <div class="loading">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="dashboard_grid_container">
+        <div class="dash_grid_items">
+            <div class="row">
+                <div class="col-xl-12 flex navtab">
+                    <div class="title">
+                        <!-- <i class="bi bi-cart-plus"></i> -->
+                        <img src="logo.png" alt="logo"  width="50px" height="50px">
+                        <h3><span>Lifecare</span></h3>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <ul class="menu">
+                        <li>
+                            <a href="dashboard.html" class="dropdown">
+                                <i class="bi bi-grid-fill"></i>
+                                <span><big> Dashboard</big></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="dropdown">
+                                <i class="bi bi-person-fill"></i>
+                                <span><big>Home</big></span>
+                            </a>
+                        </li>
+                        <li class="nested_list">
+                            <a class="dropdown">
+                                <i class="bi bi-collection-fill"></i>
+                                <span><big>Inventory </big> <i class="bi bi-arrow-right-circle-fill drop"></i></span>
+                            </a>
+                            <ul class="list_dropdown">
+                                <li><a href="store.html"><i class="bi bi-chevron-double-right"></i><big> campaign list</big></a></li>
+                                <li><a href="newItem.html"><i class="bi bi-chevron-double-right"></i><big> add new</big></a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="contact.html" class="dropdown">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                                <span><big>Technical Help</big></span>
+                            </a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="login.html" class="dropdown">
+                                <!-- <i class="bi bi-shield-fill"></i> -->
+                                <!-- <i class="bi bi-box-arrow-in-left"></i> -->
+                                <i class="bi bi-arrow-left-circle-fill"></i>
+                                <span><big> Log Out</big></span>
+                            </a>
+                        </li>
+                        <!-- <li><a href=""></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dash_grid_items">
+            <div class="box_full" style="--width:100%">
+                <div class="container">
+                    <div class="row" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="3000">
+                        <div class="col-10 flex">
+                            <div class="input Search">
+                                <input type="text" placeholder="Search Package Name">
+                            </div>
+                        </div>
+                        <div class="col-2 flex">
+                            <div class="profile">
+                                <img src="https://th.bing.com/th/id/OIP.X0Bqsl6JQsvg2mSFr9JrcQHaHa?pid=ImgDet&rs=1" alt="" srcset="">
+                            </div>
+                            <div class="grid mt-20">
+                                <span class="white">John Doe</span>
+                                <div class="up">
+                                    <span class="gray small italic">Administrator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="" >
+                <div class=" grid_templated ">
+                <div class="box_full_template_grid " style="--width:100%; -h:150px; " data-aos="flip-up" data-aos-duration="1000" data-aos-delay="3000">
+                    <div class="title text-center mt-2 ">
+                        <h5><span>Total Campaign</span></h5>
+                    </div>
+                    <div class="number ">
+                        <div class="title text-center mt-2 ">
+                            <h1><span>10+</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_full_template_grid " style="--width:100%;--h:150px; " data-aos="flip-up" data-aos-duration="1000" data-aos-delay="3000">
+                    <div class="title text-center mt-2 ">
+                        <h5><span>Available Credits</span></h5>
+                    </div>
+                    <div class="number ">
+                        <div class="title text-center mt-2 ">
+                            <h1><span>1223</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_full_template_grid " style="--width:100%;--h:150px; " data-aos="flip-up" data-aos-duration="1000" data-aos-delay="3000">
+                    <div class="title text-center mt-2 ">
+                        <h5><span>Purchased Credits</span></h5>
+                    </div>
+                    <div class="number ">
+                        <div class="title text-center mt-2 ">
+                            <h1><span>1233</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" container ">
+            <div class="common-grid " style="--grid-template:auto auto auto auto auto auto auto " data-aos="fade-right" data-aos-duration="1000" data-aos-delay="3000">
+                <div class="grid-item " style="background-color: var(--shadow);padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Campaign Title</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item " style="background-color: var(--shadow);padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Description</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item " style="background-color: var(--shadow);padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Start Date</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item " style="background-color: var(--shadow);padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>End Date</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item " style="background-color: var(--shadow);padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Venue</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item " style="background-color: var(--shadow);padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Target Audience</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item " style="background-color: var(--shadow);padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Actions</span></h5>
+                    </div>
+                </div>
+
+
+
+
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Health Care</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Fitness Campaign</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>5 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>20 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School Students</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Completed</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Health Care</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Fitness Campaign</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>5 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>20 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School Students</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Completed</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Health Care</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Fitness Campaign</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>5 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>20 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School Students</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Completed</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Health Care</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Fitness Campaign</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>5 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>20 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School Students</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Completed</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Health Care</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Fitness Campaign</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>5 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>20 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School Students</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Completed</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Health Care</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Fitness Campaign</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>5 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>20 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School Students</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Completed</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Health Care</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Fitness Campaign</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>5 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>20 Jan</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>School Students</span></h5>
+                    </div>
+                </div>
+                <div class="grid-item h " style="padding-left: 10px;padding-right: 10px; ">
+                    <div class="title ">
+                        <h5><span>Completed</span></h5>
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js "
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm "
+        crossorigin="anonymous "></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js "></script>
+    <script>
+        AOS.init({
+            duration: 1500
+        });
+        jQuery.noConflict();
+        setTimeout(() => {
+            jQuery(".pre_loader ").fadeOut({
+                duration: 500,
+                easing: 'linear'
+            });
+        }, 2000);
+    </script>
+</body>
+
+</html>
